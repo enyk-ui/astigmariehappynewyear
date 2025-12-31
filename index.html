@@ -242,9 +242,12 @@
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
-            z-index: 70;
+            z-index: 9999;
             opacity: 0;
             pointer-events: none;
+            will-change: opacity;
+            contain: layout style;
+            isolation: isolate;
         }
 
         .countdown-container.visible {
@@ -386,9 +389,13 @@
                 transform: translateX(-50%);
                 width: 90%;
                 padding: 15px;
-                background: rgba(0, 0, 0, 0.7);
+                background: rgba(0, 0, 0, 0.85);
                 border-radius: 15px;
                 backdrop-filter: blur(10px);
+                z-index: 9999;
+                will-change: opacity;
+                contain: layout style;
+                isolation: isolate;
             }
             .countdown-container.visible {
                 animation: slideUp 1s ease-out forwards;
@@ -436,11 +443,12 @@
             </div>
         </div>
 
-        <!-- Countdown Timer -->
-        <div class="countdown-container" id="countdownContainer">
-            <div class="countdown-label">Seconds into 2026</div>
-            <div class="countdown-timer" id="countdownTimer">0</div>
-        </div>
+    </div>
+
+    <!-- Countdown Timer - Outside container to prevent animation interference -->
+    <div class="countdown-container" id="countdownContainer">
+        <div class="countdown-label">Seconds into 2026</div>
+        <div class="countdown-timer" id="countdownTimer">0</div>
     </div>
 
     <!-- 
