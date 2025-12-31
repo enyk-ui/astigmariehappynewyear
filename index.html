@@ -379,6 +379,28 @@
                 padding: 15px 35px;
                 font-size: 1.2rem;
             }
+            .countdown-container {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+                padding: 15px;
+                background: rgba(0, 0, 0, 0.7);
+                border-radius: 15px;
+                backdrop-filter: blur(10px);
+            }
+            .countdown-container.visible {
+                animation: slideUp 1s ease-out forwards;
+                animation-delay: 2s;
+            }
+            .countdown-timer {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+            .countdown-label {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
